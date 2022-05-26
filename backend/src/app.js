@@ -11,10 +11,8 @@ import session from 'express-session';
 
 const app = express();
 
-//sett
 app.set('port', process.env.PORT || 4000);
 
-//middl
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors({
@@ -25,7 +23,7 @@ app.use(
     session({
       store: MongoStore.create({
         mongoUrl:
-          'mongodb+srv://login:service@cluster0.fgqy0.mongodb.net/loginService?retryWrites=true&w=majority',
+        process.env.MONGO_URI,
         ttl: 60
       }),
       secret: "123-456-789",

@@ -1,7 +1,8 @@
 import Strategy from "passport-local";
-import User from "../models/User.js"; //importas el schema del usuario
+import User from "../models/User.js";
 import bcrypt from "bcryptjs";
-const localStrategy = Strategy.Strategy; //llamo al metodo strategy de passport-local
+
+const localStrategy = Strategy.Strategy; 
 
 const passportLocal = (passport) => {
   passport.use(
