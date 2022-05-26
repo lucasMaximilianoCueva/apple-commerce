@@ -1,0 +1,1 @@
+export default {testTimeout: 40000};
